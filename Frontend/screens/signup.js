@@ -12,6 +12,7 @@ import FbLogo from '../assets/images/fb.svg'
 import { signUpStyles } from '../styles/signupStyle';
 import {NumField } from '../cutomComponents/Numfield'
 import ReactNavigation from 'react-navigation'
+import { componentStyles } from '../styles/componentStyles';
 
 export const SignUp = ({ navigation }) => {
     
@@ -47,25 +48,51 @@ export const SignUp = ({ navigation }) => {
                 />
             </View>
             <View style={signUpStyles.formContainer}>
-                <TextField2
+                {/* <TextField2
                     placeholder="Name"
                     isPasswd={false}
                     placeColor={"#ECCA5173"}
+                /> */}
+                <TextInput
+                    style={componentStyles.textfield2}
+                    placeholder="Name"
+                    secureTextEntry={false}
+                    placeholderTextColor="#ECCA5173"
                 />
-                <NumField
+                {/* <NumField
                     placeholder="Phone Number"
                     isPasswd={false}
                     placeColor={"#ECCA5173"}
+                /> */}
+                <TextInput
+                    keyboardType="numeric"
+                    maxLength={10}
+                    style={componentStyles.textfield2}
+                    placeholder="Phone Number"
+                    secureTextEntry={false}
+                    placeholderTextColor="#ECCA5173"
                 />
-                <TextField2
+                {/* <TextField2
                     placeholder="Email Id"
                     isPasswd={false}
                     placeColor={"#ECCA5173"}
+                /> */}
+                <TextInput
+                    style={componentStyles.textfield2}
+                    placeholder="Email Id"
+                    secureTextEntry={false}
+                    placeholderTextColor="#ECCA5173"
                 />
-                <TextField2
+                {/* <TextField2
                     placeholder="Password"
                     isPasswd={true}
                     placeColor={"#ECCA5173"}
+                /> */}
+                <TextInput
+                    style={componentStyles.textfield2}
+                    placeholder="Password"
+                    secureTextEntry={true}
+                    placeholderTextColor="#ECCA5173"
                 />
                 <Pressable style={[signUpStyles.button, signUpStyles.bottomShadow]}
                 // onPress={onClick}

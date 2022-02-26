@@ -3,6 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
+  ToastAndroid,
   Image,
   Button,
   Pressable,
@@ -45,7 +46,9 @@ export const Login = ({ navigation }) => {
     });
     const res = await auth.json();
     console.log(res.status);
-    navigator.navigate("Home");
+    if (res.status == "OK") {
+      navigation.navigate("Home");
+    }
   };
 
   return (
@@ -108,6 +111,7 @@ export const Login = ({ navigation }) => {
             loginStyles.bottomShadow,
             loginStyles.extraMarg,
           ]}
+          onPress={backToHome}
         >
           <GoogleLogo width="45" />
         </Pressable>
@@ -117,6 +121,7 @@ export const Login = ({ navigation }) => {
             loginStyles.bottomShadow,
             loginStyles.extraMarg,
           ]}
+          onPress={backToHome}
         >
           <FbLogo
             width="45"
