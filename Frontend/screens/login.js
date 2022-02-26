@@ -23,11 +23,11 @@ export const Login = ({ navigation }) => {
     }
 
     const authenticate = () => {
-        if(uname == "Akshat" && passwd == "Akshat"){
+        // if(uname == "Ananya" && passwd == "Ananya"){
             navigation.navigate("Home")
-        }else{
-            ToastAndroid.show("Invlaid Username or Password", ToastAndroid.SHORT)
-        }
+        // }else{
+            // ToastAndroid.show("Invlaid Username or Password", ToastAndroid.SHORT)
+        // }
     }
 
     return(

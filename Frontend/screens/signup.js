@@ -68,19 +68,31 @@ export const SignUp = ({ navigation }) => {
                     keyboardType="numeric"
                     maxLength={10}
                     style={componentStyles.textfield2}
-                    placeholder={prop.placeholder}
-                    secureTextEntry={prop.isPasswd}
-                    placeholderTextColor={prop.placeColor}
+                    placeholder="Phone Number"
+                    secureTextEntry={false}
+                    placeholderTextColor="#ECCA5173"
                 />
-                <TextField2
+                {/* <TextField2
                     placeholder="Email Id"
                     isPasswd={false}
                     placeColor={"#ECCA5173"}
+                /> */}
+                <TextInput
+                    style={componentStyles.textfield2}
+                    placeholder="Email Id"
+                    secureTextEntry={false}
+                    placeholderTextColor="#ECCA5173"
                 />
-                <TextField2
+                {/* <TextField2
                     placeholder="Password"
                     isPasswd={true}
                     placeColor={"#ECCA5173"}
+                /> */}
+                <TextInput
+                    style={componentStyles.textfield2}
+                    placeholder="Password"
+                    secureTextEntry={true}
+                    placeholderTextColor="#ECCA5173"
                 />
                 <Pressable style={[signUpStyles.button, signUpStyles.bottomShadow]}
                 // onPress={onClick}
