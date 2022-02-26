@@ -13,7 +13,7 @@ export const welcomeStyles = StyleSheet.create({
     },
     containerTop: {
       alignItems: "center",
-      marginTop: 30
+      marginTop: 50
     },
     conatainerMid: {
       textAlign:"center"

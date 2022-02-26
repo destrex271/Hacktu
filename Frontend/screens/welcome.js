@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, Button, Pressable, Alert} from 'react-native';
+import { StyleSheet, SafeAreaView, Text, View, Image, Button, Pressable, Alert} from 'react-native';
 import { Dimensions } from 'react-native';
 import {welcomeStyles} from '../styles/welcomeStyles'
 import LogoSvg from '../assets/images/myShare.svg'
@@ -27,14 +27,14 @@ export const Welcome = ({ navigation }) => {
     })
 
     return(
-        <View style={global.back}>
+        <SafeAreaView style={global.back}>
           <VectorUp
             width="530"
             height="430"
             style={{
                 position: 'absolute',
-                top: -170,
-                left: -125,
+                top: -150,
+                left: -100,
                 bottom: 0,
             }} 
           />
@@ -86,7 +86,7 @@ export const Welcome = ({ navigation }) => {
               <Text style={[welcomeStyles.buttonTxt, welcomeStyles.yellow]}>Sign Up</Text>
             </Pressable>
           </View>
-        </View>
+        </SafeAreaView>
     )
 }
 

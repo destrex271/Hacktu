@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View, Image, Button, Pressable, Alert, TextInput} from 'react-native';
+import { StyleSheet, Text, View, ToastAndroid, Image, Button, Pressable, Alert, TextInput} from 'react-native';
 import { Dimensions } from 'react-native';
 import LogoSvg from '../assets/images/myShare.svg'
 import {global} from '../styles/globalStyles'
@@ -23,8 +23,11 @@ export const Login = ({ navigation }) => {
     }
 
     const authenticate = () => {
-        console.log(uname)
-        console.log(passwd)
+        if(uname == "Akshat" && passwd == "Akshat"){
+            navigation.navigate("Home")
+        }else{
+            ToastAndroid.show("Invlaid Username or Password", ToastAndroid.SHORT)
+        }
     }
 
     return(

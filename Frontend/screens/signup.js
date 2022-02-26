@@ -12,6 +12,7 @@ import FbLogo from '../assets/images/fb.svg'
 import { signUpStyles } from '../styles/signupStyle';
 import {NumField } from '../cutomComponents/Numfield'
 import ReactNavigation from 'react-navigation'
+import { componentStyles } from '../styles/componentStyles';
 
 export const SignUp = ({ navigation }) => {
     
@@ -47,15 +48,29 @@ export const SignUp = ({ navigation }) => {
                 />
             </View>
             <View style={signUpStyles.formContainer}>
-                <TextField2
+                {/* <TextField2
                     placeholder="Name"
                     isPasswd={false}
                     placeColor={"#ECCA5173"}
+                /> */}
+                <TextInput
+                    style={componentStyles.textfield2}
+                    placeholder="Name"
+                    secureTextEntry={false}
+                    placeholderTextColor="#ECCA5173"
                 />
-                <NumField
+                {/* <NumField
                     placeholder="Phone Number"
                     isPasswd={false}
                     placeColor={"#ECCA5173"}
+                /> */}
+                <TextInput
+                    keyboardType="numeric"
+                    maxLength={10}
+                    style={componentStyles.textfield2}
+                    placeholder={prop.placeholder}
+                    secureTextEntry={prop.isPasswd}
+                    placeholderTextColor={prop.placeColor}
                 />
                 <TextField2
                     placeholder="Email Id"
