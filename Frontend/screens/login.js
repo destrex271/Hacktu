@@ -31,11 +31,13 @@ export const Login = ({ navigation }) => {
     navigation.goBack();
   };
   const authenticate = async () => {
+    
     let u_key = encodeURIComponent("username");
     let p_key = encodeURIComponent("password");
     let u_value = encodeURIComponent(uname);
     let p_value = encodeURIComponent(passwd);
     let payload = u_key + "=" + u_value + "&" + p_key + "=" + p_value;
+    
     const auth = await fetch("https://hacktu.herokuapp.com/validateUser", {
       method: "POST",
       mode: "cors",
@@ -44,11 +46,21 @@ export const Login = ({ navigation }) => {
       },
       body: payload,
     });
-    const res = await auth.json();
-    console.log(res.status);
-    if (res.status == "OK") {
-      navigation.navigate("Home");
+    try{
+      
+      const res = await auth.json();
+      
+      console.log(res.status);
+      if (res.status == "OK") {
+        navigation.navigate("Home");
+      }else{
+        ToastAndroid.show("Invalid Username or Password", ToastAndroid.SHORT);
+      }
+      
+    }catch{
+      ToastAndroid.show("Invalid Username or Password", ToastAndroid.SHORT);
     }
+    // navigation.naigate()
   };
 
   return (
